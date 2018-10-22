@@ -18,7 +18,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView mTextViewResult;
+    private TextView mTextViewResult, searchTextView;
     private RequestQueue mQueue;
 
     @Override
@@ -27,7 +27,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mTextViewResult = findViewById(R.id.text_view_result);
+        searchTextView = findViewById(R.id.editText);
         Button buttonParse = findViewById(R.id.button_parse);
+
 
         mQueue = Volley.newRequestQueue(this);
 
@@ -35,13 +37,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 jsonParse();
+                
             }
         });
 
     }
 
     private void jsonParse(){
-        String url = "http://api.walmartlabs.com/v1/items?apiKey=6vcmy7qjr95srak5ed8aj6bu&upc=035000521019";
+
+
+        String url = "http://api.walmartlabs.com/v1/search?query=" + searchTextView.getText()+ "&format=json&apiKey=6vcmy7qjr95srak5ed8aj6bu";
+
+
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
@@ -52,10 +59,10 @@ public class MainActivity extends AppCompatActivity {
                     for(int i =0; i<jsonArray.length(); i++){
                         JSONObject item = jsonArray.getJSONObject(i);
 
-                        String productName = item.getString("name");
+                        String productName = item.getString("name") + "\n";
                         int price = item.getInt("salePrice");
 
-                        mTextViewResult.append(productName + " , " +String.valueOf(price));
+                        mTextViewResult.append(productName + "\n" + " € " +String.valueOf(price) + "\n");
 
                     }
                 } catch (JSONException e) {

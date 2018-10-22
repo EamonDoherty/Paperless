@@ -56,15 +56,15 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     JSONArray jsonArray = response.getJSONArray("items");
 
-                    for(int i =0; i<jsonArray.length(); i++){
-                        JSONObject item = jsonArray.getJSONObject(i);
+//                    for(int i =0; i<jsonArray.length(); i++){            //********Commented out for loop to only get first element searched
+                        JSONObject item = jsonArray.getJSONObject(0);
 
                         String productName = item.getString("name") + "\n";
                         int price = item.getInt("salePrice");
 
                         mTextViewResult.append(productName + "\n" + " € " +String.valueOf(price) + "\n");
 
-                    }
+//                    }                 //for loop closing brace
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

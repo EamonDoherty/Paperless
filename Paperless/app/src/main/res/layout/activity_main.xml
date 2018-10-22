@@ -18,10 +18,10 @@
         android:id="@+id/button_parse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="96dp"
-        android:text="Button"
+        android:layout_marginTop="135dp"
+        android:text="Submit"
         tools:layout_editor_absoluteX="147dp"
         tools:layout_editor_absoluteY="159dp" />
 
@@ -31,8 +31,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_view_result"
         android:layout_centerHorizontal="true"
-        android:ems="10"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:ems="15"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:hint="Enter Here" />
 
-</RelativeLayout>
+
+    </RelativeLayout>

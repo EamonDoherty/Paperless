@@ -11,19 +11,25 @@
         android:id="@+id/text_view_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:textColor="@android:color/holo_red_dark"/>
+        android:textSize="20sp"
+        android:textColor="#22282C"
+        />
 
     <Button
         android:id="@+id/button_parse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="135dp"
+        android:layout_marginBottom="26dp"
+        android:background="#3399FF"
+        android:fontFamily="sans-serif"
         android:text="Submit"
+        android:textSize="20sp"
+        android:textStyle="bold"
         tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="159dp" />
+        tools:layout_editor_absoluteY="159dp"
+        />
 
     <EditText
         android:id="@+id/editText"
@@ -35,8 +41,17 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"
         android:ems="15"
+        android:fontFamily="sans-serif"
+        android:hint="Enter Here"
         android:inputType="textPersonName"
-        android:hint="Enter Here" />
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:textAlignment="center"
+        android:textAppearance="@android:style/TextAppearance.Holo.Large"
+        android:textColor="#22282C"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
 
 
     </RelativeLayout>
